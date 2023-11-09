@@ -1,0 +1,145 @@
+/* Reset CSS styles and set the default font-family */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Define the text selection style */
+::selection {
+  color: #000;
+  background: #fff;
+}
+
+/* Logo link styling */
+.logo a{
+  text-decoration: none;
+  color: #eb4a00;
+  text-shadow: 3px;
+  font-size: 35px;
+  font-weight: Bold;
+  padding: 10px 100px;
+  position: fixed;
+  width: 100%;
+}
+
+/* Styling for the background image */
+.Bgimage {
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  filter: blur(3px) brightness(0.4);
+  z-index: -1;
+}
+
+/* Styling for loginform */
+.loginform {
+  color: white;
+  font-weight: bold;
+  border-radius: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  padding: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.loginform p {
+  margin: 20px;
+}
+
+.loginform p span {
+  color: red;
+  font-weight: lighter;
+  font-size: 13px;
+}
+
+#email,#password {
+  border: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+label {
+  color: #eb4a00;
+  font-weight: lighter;
+  font-size: small;
+}
+
+/* Styling login button */
+#submit:hover {
+  color: #eb4a00;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  color: #eb4a00;
+}
+
+.signup-class {
+  font-weight: lighter;
+}
+
+.signup-class a {
+  color: #eb4a00;
+}
+/* Add responsive styles */
+@media (max-width: 952px) {
+  .center {
+    width: 40%;
+    margin-right: 50px;
+    padding-right: 50px;
+  }
+
+  .center h1 {
+    font-size: 24px;
+  }
+
+  .center p {
+    font-size: 19px;
+  }
+
+  .loginform p {
+    margin: 15px;
+  }
+
+  .loginform p span {
+    font-size: 11px;
+  }
+
+  .loginform {
+    margin-right: 100px;
+    padding-right: 100px;
+  }
+
+  #email,#password {
+    font-size: 15px;
+  }
+  
+
+  .loginform h1 {
+    font-size: 25px;
+  }
+
+  .logo a{
+    font-size: 25px;
+    padding-left: 40px;
+  }
+
+  label {
+    font-size: smaller;
+  }
+
+  .signup-class {
+    font-size: small;
+  }
+  
+}

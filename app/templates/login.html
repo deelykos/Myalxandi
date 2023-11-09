@@ -1,0 +1,39 @@
+{% extends "home.html" %}
+
+{%  block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+{% block body %}
+<div class="Bgimage">
+    <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Background Image">
+</div>
+<div class="logo">
+  <a href="/home">Myalxandi</a>
+</div>
+<div class="loginform">
+  <h1>Log In</h1>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.email.label }}<br>
+        {{ form.email }}<br>
+        {% for error in form.email.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.password.label }}<br>
+        {{ form.password }}<br>
+        {% for error in form.password.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </p>
+      <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+      <p>{{ form.submit() }}</p>
+    </form>
+    <p class="signup-class">Don't have an account?
+      <a class="active"  href="{{ url_for('signup') }}">Signup</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

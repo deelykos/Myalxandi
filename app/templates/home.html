@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>Myalxandi - {{ title }}</title>
+    {% else %}
+    <title>MyAlx & I</title>
+    {% endif %}
+    {% block styles %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='images/My-logo.png') }}">
+    <script src="https://kit.fontawesome.com/f5e4a36370.js" crossorigin="anonymous"></script>
+   </head>
+{% block body %}   
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fa-solid fa-bars"></i>
+    </label>
+    <label class="logo">Myalxandi</label>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Features</a></li>
+      <li>|</li>
+      <li><a class="active"  href="{{ url_for('login') }}">log in</a></li>
+      <li><a class="active" href="{{ url_for('signup') }}">Sign up</a></li>
+    </ul>
+    
+  </nav>
+  <div class="Bgimage">
+    <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Background Image">
+  </div>
+  <div class="center">
+    <h2>WHERE TASKS MEET</h2>
+    <h2>TRIUMPH</h2>
+    <p>Be focused,do hard things but remember your works,
+      keep it organized and safe
+    </p>
+  </div> 
+</body>
+{% endblock %}
+</html>
