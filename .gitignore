@@ -1,2 +1,4 @@
 __pycache__
 my_env
+*db
+*journal
