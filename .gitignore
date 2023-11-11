@@ -1,4 +1,4 @@
 __pycache__
 my_env
-app.db
-*journal
+*.db
+*.db-journal
