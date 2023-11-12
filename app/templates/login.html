@@ -4,23 +4,30 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 {% endblock %}
 {% block body %}
+<div class="logo">Myalxandi</div>
 <div class="Bgimage">
     <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Background Image">
 </div>
-<div class="logo">
-  <a>Myalxandi</a>
-</div>
 <div class="loginform">
-  <h1>Log In</h1>
     <form action="" method="post" novalidate>
       {{ form.hidden_tag() }}
       <p>
+        <legend>Login</legend>
         {{ form.email.label }}<br>
         {{ form.email }}<br>
         {% for error in form.email.errors %}
         <span>{{ error }}</span>
         {% endfor %}
       </p>
+      <span class="flash-message">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              {{ message }}
+            {% endfor %}
+          {% endif %}     
+        {% endwith %}
+      </span>
       <p>
         {{ form.password.label }}<br>
         {{ form.password }}<br>
@@ -30,10 +37,11 @@
       </p>
       <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
       <p>{{ form.submit() }}</p>
+      <small>
+        Don't have an account?
+        <a href="{{ url_for('signup') }}">Signup</a>
+      </small>
     </form>
-    <p class="signup-class">Don't have an account?
-      <a class="active"  href="{{ url_for('signup') }}">Signup</a>
-    </p>
   </div>
 </div>
 {% endblock %}

@@ -13,7 +13,7 @@
 }
 
 /* Logo link styling */
-.logo a{
+.logo {
   text-decoration: none;
   color: #eb4a00;
   text-shadow: 3px;
@@ -22,6 +22,8 @@
   padding: 10px 100px;
   position: fixed;
   width: 100%;
+  background-color: #000;
+  z-index: 2;
 }
 
 /* Styling for the background image */
@@ -31,7 +33,7 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  position: fixed;
+  overflow-x: hidden;
   filter: blur(3px) brightness(0.4);
   z-index: -1;
 }
@@ -43,7 +45,7 @@
   border-radius: 70px;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 45%;
   transform: translate(-50%, -50%);
   z-index: 1;
   padding: 20px;
@@ -52,7 +54,7 @@
 }
 
 .loginform p {
-  margin: 20px;
+  margin: 10px;
 }
 
 .loginform p span {
@@ -61,10 +63,20 @@
   font-size: 13px;
 }
 
-#email,#password {
-  border: 10px;
+legend {
+  color: #eb4a00; 
+  margin-bottom: 20px;
+  font-size: 30px;
+  margin-top: 250px;
+}
+
+/* Add your custom styles to my form here */
+.my-class {
+  border: 1px solid #ddd;
+  padding: 8px;
   border-radius: 5px;
-  font-size: 20px;
+  margin-bottom: 10px;
+  width: 200%;
 }
 
 label {
@@ -74,72 +86,66 @@ label {
 }
 
 /* Styling login button */
-#submit:hover {
-  color: #eb4a00;
+.my-submit {
+  background-color: #eb4a00;
+  padding: 4px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.my-submit:hover {
+  color: white;
   cursor: pointer;
 }
 
-h1 {
-  text-align: center;
+/*styling small element */
+small a {
   color: #eb4a00;
+  text-decoration: none;
 }
 
-.signup-class {
-  font-weight: lighter;
+small {
+  margin-left: 22px;
 }
 
-.signup-class a {
-  color: #eb4a00;
+/* styling flash message */
+.flash-message {
+  color: red;
+  font-size: small;
+  margin-left: 20px;
+  margin-right: 10px;
 }
+
 /* Add responsive styles */
 @media (max-width: 952px) {
-  .center {
-    width: 40%;
-    margin-right: 50px;
-    padding-right: 50px;
-  }
-
-  .center h1 {
-    font-size: 24px;
-  }
-
-  .center p {
-    font-size: 19px;
-  }
-
   .loginform p {
-    margin: 15px;
+    margin: 14px;
   }
-
+  
   .loginform p span {
     font-size: 11px;
   }
 
   .loginform {
-    margin-right: 100px;
-    padding-right: 100px;
+    margin-left: 20px;
+    margin-right: 40px;
+    left: 25%;
   }
 
-  #email,#password {
-    font-size: 15px;
-  }
-  
-
-  .loginform h1 {
-    font-size: 25px;
-  }
-
-  .logo a{
-    font-size: 25px;
+  .logo {
     padding-left: 40px;
+    font-size: 30px;
   }
 
-  label {
-    font-size: smaller;
+  small {
+    font-size: 12px;
+    margin-left: 0;
   }
 
-  .signup-class {
-    font-size: small;
+  .flash-message {
+    color: red;
+    font-size: 12px;
   }
-  
+
 }

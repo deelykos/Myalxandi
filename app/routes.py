@@ -31,7 +31,7 @@ def login():
            login_user(user, remember=form.remember_me.data)
            return redirect(url_for('add_task'))
         else:
-            flash('Invalid email or password.')
+            flash('Wrong email or password.')
     return render_template('login.html', title='Login', form=form)
 
 

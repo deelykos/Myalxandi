@@ -4,11 +4,11 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from app.models import User
 
 class SignupForm(FlaskForm):
-    username = StringField('username', validators=[DataRequired(), Length(min=2, max=20)])
-    email = StringField('Email', validators=[DataRequired(), Email()]) 
-    password = PasswordField('Password', validators=[DataRequired()])
-    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Sign Up')
+    username = StringField('username', validators=[DataRequired(), Length(min=2, max=20)], render_kw={'class': 'my-class'})
+    email = StringField('Email', validators=[DataRequired(), Email()], render_kw={'class': 'my-class'}) 
+    password = PasswordField('Password', validators=[DataRequired()], render_kw={'class': 'my-class'})
+    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')], render_kw={'class': 'my-class'})
+    submit = SubmitField('Sign Up', render_kw={'class': 'my-submit'})
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
@@ -22,7 +22,7 @@ class SignupForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()], render_kw={'class': 'my-class'})
+    password = PasswordField('Password', validators=[DataRequired()], render_kw={'class': 'my-class'})
     remember_me = BooleanField('Remember Me')
-    submit = SubmitField('Login')
+    submit = SubmitField('Login', render_kw={'class': 'my-submit'})
