@@ -1,0 +1,13 @@
+{% extends "home.html" %}
+
+{%  block styles %}
+<link rel="stylesheet">
+{% endblock %}
+{% block body %}
+<h1>Welcome, {{ current_user.username }}</h1>
+<nav>
+    <ul>
+      <li><a class="active" href="{{ url_for('logout') }}">logout</a></li>
+    </ul> 
+</nav>   
+{% endblock %}

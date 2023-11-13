@@ -1,0 +1,116 @@
+/* Reset CSS styles and set the default font-family */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* Define the text selection style */
+  ::selection {
+    color: #000;
+    background: #fff;
+  }
+
+  /* Navigation bar styling */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 3;
+    background-color:rgb(51, 49, 49);
+  }
+
+  /* Style for the navigation */
+nav ul {
+  float: right;
+  margin-right: 30px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 3px 3px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 15px; 
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+a.active,a:hover {
+  color: black;
+  transition: .5s;
+}
+
+a:hover {
+  color: white;
+}
+
+.checkbtn {
+  font-size: 20px;
+  color: white;
+  float: right;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* Logo link styling */
+label.logo {
+  text-decoration: none;
+  color: #eb4a00;
+  text-shadow: 3px;
+  font-size: 25px;
+  font-weight:700;
+  padding: 0 100px;
+}
+
+/* Add responsive styles */
+@media (max-width: 952px) {
+  
+  label.logo {
+    font-size: 20px;
+    padding-left: 50px;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgb(51, 49, 49);
+    top: 55px;
+    left: -100%;
+    text-align: center;
+    transition: all .3s;
+  }
+  nav ul li {
+    display: block;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,a.active {
+  background: none;
+  color: #eb4a00;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+}

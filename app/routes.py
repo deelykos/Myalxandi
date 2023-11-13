@@ -39,6 +39,11 @@ def login():
 def logout():
     return redirect(url_for('login'))
 
+@app.route('/account', methods=['GET', 'POST'])
+@login_required
+def account():
+    return render_template('account.html', title='account')
+
 @app.route('/dashboard')
 @login_required
 def dashboard():
