@@ -24,6 +24,8 @@ def signup():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('add_task'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
@@ -37,6 +39,7 @@ def login():
 
 @app.route('/logout')
 def logout():
+    logout_user()
     return redirect(url_for('login'))
 
 @app.route('/account', methods=['GET', 'POST'])

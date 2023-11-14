@@ -4,7 +4,9 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 {% endblock %}
 {% block body %}
-<div class="logo">Myalxandi</div>
+<div class="logo">
+  <a href="{{ url_for('home') }}">Myalxandi</a>
+</div>
 <div class="Bgimage">
     <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Background Image">
 </div>
