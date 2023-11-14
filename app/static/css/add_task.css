@@ -42,12 +42,13 @@ nav ul li a {
 }
 
 a.active,a:hover {
-  color: black;
+  color: white;
   transition: .5s;
+  font-size: 20px;
 }
 
 a:hover {
-  color: white;
+  color:#eb4a00;
 }
 
 .checkbtn {
@@ -103,7 +104,7 @@ label.logo {
   }
 
   nav ul li a {
-    font-size: 20px;
+    font-size: 25px;
   }
   a:hover,a.active {
   background: none;
