@@ -50,7 +50,8 @@ def account():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    return render_template('dashboard.html', title='dashboard')
+    tasks = User.query.filter_by(username=current_user.username).first().tasks
+    return render_template('dashboard.html', title='dashboard', tasks=tasks)
 
 @app.route('/add_task', methods=['GET', 'POST'])
 @login_required

@@ -127,7 +127,7 @@ small {
     
     .logo a {
       font-size: 30px;
-      padding-left: 40px;
+      width: 100%;
     }
   
     small {

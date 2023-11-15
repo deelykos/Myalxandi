@@ -2,6 +2,8 @@
 
 {%  block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<script src="{{url_for('static', filename='javascript/dashboard.js')}}"></script>
+
 {% endblock %}
 {% block body %}
 <nav>
@@ -13,5 +15,42 @@
     <ul>
       <li><a class="active" href="{{ url_for('account') }}">Account</a></li>
     </ul> 
-</nav> 
+</nav>
+<div class="table">
+  <div class="table_header">
+      <div>
+          <button class="add_new">+ Add Task</button>
+      </div>
+  </div>
+  <div class="table_section">
+      <table>
+          <thead>
+              <tr>
+                  <th>Task Title</th>
+                  <th>Date created</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+            {% if tasks %}
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.created_date }}</td>
+                        <td>
+                          <button><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>  
+                {% endfor %}
+            {% endif %}
+          </tbody>
+      </table>
+  </div>
+  <div class="pagination">
+    <div id="scrollLeft" class="fa-solid fa-chevron-left"></div>
+    <div>1</div>
+    <div id="scrollRight" class="fa-solid fa-chevron-right"></div>
+  </div>
+</div>
 {% endblock %}

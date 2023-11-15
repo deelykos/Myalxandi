@@ -71,16 +71,113 @@ label.logo {
   text-shadow: 3px;
   font-size: 25px;
   font-weight:700;
-  padding: 0 100px;
+  padding: 10px 100px;
+}
+
+/*Adding stles for table*/
+body {
+  overflow:hidden;
+}
+
+.table {
+  width: 100%;
+}
+
+.table_header {
+  display: flex;
+  justify-content: space-between;
+  justify-content: end;
+  padding-top: 60px;
+  padding-bottom: 10px;
+  padding-right: 100px;
+  padding-left: 400px;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+td button:nth-child(1) {
+  background-color: beige;
+  color: black;
+}
+
+td button:nth-child(2) {
+  background-color: red;
+  color: #000;
+}
+
+.add_new {
+  padding: 5px 5px;  
+  width: 80px;      
+  height: 30px; 
+  color: white;
+  background-color:#eb4a00;
+  border: 1px solid wheat;
+  border-radius: 30px;
+  box-shadow: 0px 0px 4px 0px black;
+}
+
+.add_new:hover {
+  color:black;
+}
+
+.table_section {
+  height: 450px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  min-width: 700px;
+  border-collapse: collapse;
+
+}
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: beige;
+  color: black;
+  font-size: 18px;
+}
+
+th,td {
+  border-bottom: 1px solid #dddddd;
+  padding: 10px 20px;
+  word-break: break-all;
+  text-align: left;
+}
+
+::placeholder {
+  color: black;
+
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 3);
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 3);
 }
 
 /* Add responsive styles */
 @media (max-width: 952px) {
   
   label.logo {
-    font-size: 20px;
-    padding-left: 50px;
-    padding-right: 0;
+    font-size: 15px;
+    padding-left: 20px;
   }
 }
 
@@ -113,5 +210,45 @@ label.logo {
 
   #check:checked ~ ul {
     left: 0;
+  }
+
+  .add_new {
+    font-size: 12px;
+  }
+
+  .table_section {
+    font-size: 12px;
+  }
+
+  tr th {
+    font-size: 14px;
+  }
+
+  .add_new {
+    margin-right: 20px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: white;
+  }
+  
+  .pagination div {
+    padding: 10px;
+    border: 2px solid wheat;
+    height:20px;
+    width: 20px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eb4a00;
+    color: #dddddd;
+    box-shadow: 0px 0px 4px 0px black;
+    margin: 0 5px;
+    cursor: pointer;
   }
 }
