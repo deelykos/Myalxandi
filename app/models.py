@@ -12,10 +12,11 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
+    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     tasks = db.relationship('Task', backref='user', lazy=True)
 
     def __repr__(self):
-        return f"User(username='{self.username}', email='{self.email}' password='{self.password}' )"
+        return f"User(username='{self.username}', email='{self.email}', image_file='{self.image_file}' password='{self.password}' )"
     
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
