@@ -154,7 +154,7 @@ p {
     height: 100vh;
     background: rgb(51, 49, 49);
     top: 55px;
-    left: -100%;
+    left: 100%;
     text-align: center;
     transition: all .3s;
   }

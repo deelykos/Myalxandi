@@ -11,43 +11,42 @@
     <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Background Image">
 </div>
 <div class="signupform">
-    <form action="" method="post" novalidate>
-      {{ form.hidden_tag() }}
-      <p>
-        <legend>Sign Up</legend>
-        {{ form.username.label }}<br>
-        {{ form.username }}<br>
-        {% for error in form.username.errors %}
-        <span>{{ error }}</span>
-        {% endfor %}
-      </p>
-      <p>
-        {{ form.email.label }}<br>
-        {{ form.email }}<br>
-        {% for error in form.email.errors %}
-        <span>{{ error }}</span>
-        {% endfor %}
-      </p>
-      <p>
-        {{ form.password.label }}<br>
-        {{ form.password }}<br>
-        {% for error in form.password.errors %}
-        <span>{{ error }}</span>
-        {% endfor %}
-      </p>
-      <p>
-        {{ form.confirm_password.label }}<br>
-        {{ form.confirm_password }}<br>
-        {% for error in form.confirm_password.errors %}
-        <span>{{ error }}</span>
-        {% endfor %}
-      </p>
-      <p>{{ form.submit() }}</p>
-      <small>
-        Already have an account?
-        <a href="{{ url_for('login') }}">login</a>
-      </small>
-    </form>
-  </div>
+  <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+      <legend>Sign Up</legend>
+      {{ form.username.label }}<br>
+      {{ form.username }}<br>
+      {% for error in form.username.errors %}
+      <span>{{ error }}</span>
+      {% endfor %}
+    </p>
+    <p>
+      {{ form.email.label }}<br>
+      {{ form.email }}<br>
+      {% for error in form.email.errors %}
+      <span>{{ error }}</span>
+      {% endfor %}
+    </p>
+    <p>
+      {{ form.password.label }}<br>
+      {{ form.password }}<br>
+      {% for error in form.password.errors %}
+      <span>{{ error }}</span>
+      {% endfor %}
+    </p>
+    <p>
+      {{ form.confirm_password.label }}<br>
+      {{ form.confirm_password }}<br>
+      {% for error in form.confirm_password.errors %}
+      <span>{{ error }}</span>
+      {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+    <small>
+      Already have an account?
+      <a href="{{ url_for('login') }}">login</a>
+    </small>
+  </form>
 </div>
 {% endblock %}
