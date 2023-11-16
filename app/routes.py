@@ -3,7 +3,7 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request
 from app import app, db, bcrypt
-from app.forms import SignupForm, LoginForm, UpdateAccountForm
+from app.forms import SignupForm, LoginForm, UpdateAccountForm, TaskForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Task
 
@@ -75,18 +75,21 @@ def account():
         form.username.data = current_user.username
         form.email.data = current_user.email
     image_file = url_for('static', filename='profile_pic/' + current_user.image_file)
-    return render_template('account.html', title='account', image_file=image_file, form=form)
+    return render_template('account.html', title='Profile', image_file=image_file, form=form)
 
 @app.route('/dashboard')
 @login_required
 def dashboard():
     tasks = User.query.filter_by(username=current_user.username).first().tasks
-    return render_template('dashboard.html', title='dashboard', tasks=tasks)
+    return render_template('dashboard.html', title='Dashboard', tasks=tasks)
 
 @app.route('/add_task', methods=['GET', 'POST'])
 @login_required
 def add_task():
-    return render_template('add_task.html', title='add_task')
+    form = TaskForm()
+    if form.validate_on_submit():
+        return redirect(url_for('dashboard'))
+    return render_template('add_task.html', title='New_task', form=form)
 
 @app.route('/edit_task/<int:task_id>', methods=['GET', 'POST'])
 @login_required

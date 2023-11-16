@@ -1,0 +1,54 @@
+{% extends "home.html" %}
+
+{%  block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add_task.css') }}">
+{% endblock %}
+{% block body %}
+<nav>
+  <label class="logo">{{ current_user.username }}'s Task Manager</label>
+</nav>
+<div class="task-container">
+    <div class="form-container">
+        <form action="" method="POST">
+          {{ form.hidden_tag() }}
+          <p>
+            {{ form.title.label }}<br>
+            {{ form.title }}<br>
+            {% for error in form.title.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.description.label }}<br>
+            {{ form.description }}<br>
+            {% for error in form.description.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.resources.label }}<br>
+            {{ form.resources }}<br>
+            {% for error in form.resources.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.achievements.label }}<br>
+            {{ form.achievements }}<br>
+            {% for error in form.achievements.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.challenges.label }}<br>
+            {{ form.challenges }}<br>
+            {% for error in form.challenges.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>{{ form.submit() }}</p>
+          <small>
+        <form>
+    <div>
+</div>
+{% endblock %}

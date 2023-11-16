@@ -26,8 +26,6 @@ class Task(db.Model):
     challenges = db.Column(db.Text, nullable=True)
     achievements = db.Column(db.Text, nullable=True)
     created_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    due_date = db.Column(db.DateTime, nullable=True)
-    completed = db.Column(db.Boolean, default=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 

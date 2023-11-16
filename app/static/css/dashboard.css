@@ -41,13 +41,13 @@ nav ul li a {
   transition: all 0.3s ease;
 }
 
-a.active,a:hover {
+.active {
   color: white;
   transition: .5s;
   font-size: 20px;
 }
 
-a:hover {
+.active:hover {
   color:#eb4a00;
 }
 
@@ -114,18 +114,21 @@ td button:nth-child(2) {
 }
 
 .add_new {
-  padding: 5px 5px;  
-  width: 80px;      
+  padding: 2px 10px;  
+  min-width: 60px;      
   height: 30px; 
   color: white;
-  background-color:#eb4a00;
+  background-color: #eb4a00;
   border: 1px solid wheat;
   border-radius: 30px;
   box-shadow: 0px 0px 4px 0px black;
+  text-decoration: none;
+  font-size: 15px;
+  white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .add_new:hover {
-  color:black;
+  color: black;
 }
 
 .table_section {
@@ -181,6 +184,13 @@ th,td {
   display: none;
 }
 
+/* styles for the satus section */
+.toggleButton {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 15px;
+}
 
 /* Add responsive styles */
 @media (max-width: 952px) {
@@ -216,9 +226,9 @@ th,td {
   nav ul li a {
     font-size: 25px;
   }
-  a:hover,a.active {
+  active:hover, .active {
   background: none;
-  color: #eb4a00;
+  color: white;
   }
 
   a:hover {
@@ -267,5 +277,10 @@ th,td {
     box-shadow: 0px 0px 4px 0px black;
     margin: 0 5px;
     cursor: pointer;
+  }
+
+  .toggleButton {
+    padding: 6px;
+    font-size: 12px;
   }
 }

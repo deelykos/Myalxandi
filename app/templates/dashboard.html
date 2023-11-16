@@ -3,6 +3,7 @@
 {%  block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
 <script src="{{url_for('static', filename='javascript/dashboard.js')}}"></script>
+<script src="{{url_for('static', filename='javascript/status.js')}}"></script>
 
 {% endblock %}
 {% block body %}
@@ -18,16 +19,17 @@
 </nav>
 <div class="table">
   <div class="table_header">
-      <div>
-          <button class="add_new">+ Add Task</button>
-      </div>
+    <div>
+      <a class="add_new" href="{{ url_for('add_task') }}">+ Add Task</a>
+   </div>
   </div>
   <div class="table_section">
       <table>
           <thead>
               <tr>
                   <th>Task Title</th>
-                  <th>Date created</th>
+                  <th>Date Created</th>
+                  <th>Status</th>
                   <th></th>
               </tr>
           </thead>
@@ -37,6 +39,9 @@
                     <tr>
                         <td>{{ task.title }}</td>
                         <td>{{ task.created_date }}</td>
+                        <td>
+                          <button class="toggleButton" onclick="toggleStatus(this)">Uncompleted</button>
+                        </td>
                         <td>
                           <button><i class="fa-solid fa-pen-to-square"></i></button>
                           <button><i class="fa-solid fa-trash"></i></button>

@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* Define the text selection style */
+  ::selection {
+    color: #000;
+    background: #fff;
+  }
+
+    /* Navigation bar styling */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    top: 0;
+    z-index: 3;
+    background-color:rgb(51, 49, 49);
+  }
+
+  
+/* Logo link styling */
+label.logo {
+    text-decoration: none;
+    color: #eb4a00;
+    text-shadow: 3px;
+    font-size: 25px;
+    font-weight:700;
+    padding: 10px 100px;
+  }
+
+  body {
+    background-color: beige;
+  }
+ 
+   /* styling the profile container */
+.task-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top:  100px;
+    height: 100vh;
+    padding-top: 100px;
+    padding-right: 200px;
+    padding-left: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 100px;
+    
+}
+
+    
+
+.my-class {
+    border: 1px solid wheat;
+    box-shadow: 0px 0px 4px 0px black;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: 200%;
+    font-size: 20px;
+    }
+
+.form-container p {
+    margin-top: 20px;
+    color: #eb4a00;
+    font-weight: bold;
+}
+
+label {
+    font-size: 20px;
+} 
+
+.my-submit {
+  background-color: #eb4a00;
+  padding: 7px 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.my-submit:hover {
+  color: white;
+  cursor: pointer;
+}
+
+  /* Add responsive styles */
+@media (max-width: 952px) {
+  
+    label.logo {
+      font-size: 15px;
+      padding-left: 10px;
+    }
+}
