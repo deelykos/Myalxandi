@@ -22,16 +22,6 @@ nav {
   background-color:rgb(51, 49, 49);
 }
 
-
-  /* Navigation bar styling */
-  nav {
-    position: fixed;
-    width: 100%;
-    padding: 10px 0;
-    z-index: 3;
-    background-color:rgb(51, 49, 49);
-  }
-
   /* Style for the navigation */
 nav ul {
   float: right;
@@ -65,8 +55,8 @@ a:hover {
 .checkbtn {
   font-size: 20px;
   color: white;
-  float: right;
-  margin-right: 40px;
+  float: left;
+  margin-left: 40px;
   cursor: pointer;
   display: none;
 }
@@ -96,6 +86,7 @@ label.logo {
     padding: 20px;
     box-shadow: 0px 0px 4px 0px black;
     margin-top: 120px;
+    border-radius: 30px;
 }
 
 .profile-image {
@@ -132,12 +123,12 @@ label.logo {
   transform: translate(-50%, -50%);
   z-index: 1;
   padding: 10px;
-  margin-left: -90px;
-  margin-top: 150px;
+  margin-left: -30px;
+  margin-top: 190px;
 }
 
 .UpdateAccountForm p {
-  margin: 10px;
+  margin: 10px ;
 }
 
 .UpdateAccountForm p span {
@@ -150,7 +141,7 @@ legend {
   color: #eb4a00; 
   margin-bottom: 20px;
   font-size: 20px;
-  margin-top: 200px;
+  margin-top: 210px;
 }
 
 .my-class {
@@ -158,8 +149,14 @@ legend {
   padding: 8px;
   border-radius: 5px;
   margin-bottom: 15px;
-  width: 200%;
+  width: 120%;
   box-sizing: border-box;
+  }
+
+  #picture {
+    color: #000;
+    display: block;
+    border: none;
   }
   
   label {
@@ -199,12 +196,15 @@ legend {
   ul {
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: 30vh;
     background: rgb(51, 49, 49);
     top: 55px;
     left: 100%;
     text-align: center;
-    transition: all .3s;
+    transition: all .1s;
+    border: 1px solid wheat;
+    box-shadow: 0px 0px 10px 0px black;
+    border-radius: 15px;
   }
   nav ul li {
     display: block;
@@ -213,12 +213,85 @@ legend {
   nav ul li a {
     font-size: 25px;
   }
+  
   a:hover,a.active {
-  background: none;
-  color: #eb4a00;
-  }
-
+    background: none;
+    color: #eb4a00;
+    }
+  
+    a:hover {
+      color: white;
+    }
+    
   #check:checked ~ ul {
     left: 0;
   }
+
+  .profile-container {
+    max-width: 600px;
+    height: 750px;
+    margin-top: 200px;
+    border-radius: 30px;
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: #ddd;
+  }
+
+  .account-name {
+    font-size: 18px;
+  }
+  
+  .account-email {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+
+  legend {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .my-class {
+    padding: 4px;
+    margin-bottom: 8px;
+    width: 140%;
+    box-sizing: border-box;
+    font-size: 12px;
+    }
+
+    .UpdateAccountForm p {
+      margin: 5px ;
+    }
+
+    label {
+      font-size: 10px;
+    }
+
+    .my-submit {
+      padding: 2px;
+      margin-bottom: 5px;
+      border: none;
+    }
+
+    .UpdateAccountForm {
+      top: 30%;
+      left: 40%;
+      padding: 10px;
+      margin-left: 0;
+      margin-top:  300px;
+    }
+
+    #picture {
+      border: none;
+    }
+
+    .UpdateAccountForm p span {
+      font-size: 9px;
+    }
+  
 }
