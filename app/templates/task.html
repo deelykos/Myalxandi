@@ -1,0 +1,35 @@
+{% extends "home.html" %}
+
+{%  block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/task.css') }}">
+{% endblock %}
+{% block body %}
+<nav>
+    <label class="logo">{{ current_user.username }}'s Task Manager</label>
+</nav>
+<div class="task-detail">
+    <h2 class="task-title">{{ task.title }}</h2>
+    <p class="created-date">Created on {{ task.created_date.strftime('%a %b %d %Y') }}</p>
+
+    <div class="detail-section">
+        <h3 class="detail-heading">Description</h3>
+        <p class="detail-text">{{ task.description }}</p>
+    </div>
+
+    <div class="detail-section">
+        <h3 class="detail-heading">Study Materials</h3>
+        <p class="detail-text">{{ task.resources }}</p>
+    </div>
+
+    <div class="detail-section">
+        <h3 class="detail-heading">Challenges</h3>
+        <p class="detail-text">{{ task.challenges }}</p>
+    </div>
+
+    <div class="detail-section">
+        <h3 class="detail-heading">Achievements</h3>
+        <p class="detail-text">{{ task.achievements }}</p>
+    </div>
+</div>
+{% endblock %}
+ 

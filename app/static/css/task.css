@@ -1,0 +1,74 @@
+/* Reset CSS styles and set the default font-family */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Define the text selection style */
+::selection {
+    color: #000;
+    background: #fff;
+}
+
+/* Navigation bar styling */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 3;
+    background-color: rgb(51, 49, 49);
+}
+
+/* Logo link styling */
+label.logo {
+    text-decoration: none;
+    color: #eb4a00;
+    text-shadow: 3px;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px 100px;
+}
+
+.task-detail {
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+    max-width: 600px; /* Adjust the max-width to your preference */
+    text-align: center;
+    background-color: beige;
+}
+
+.task-title {
+    font-size: 24px;
+}
+
+.created-date {
+    font-size: 12px;
+    margin-bottom: 50px;
+    color: gray;
+}
+
+.detail-section {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.detail-heading {
+    font-size: 18px;
+}
+
+.detail-text {
+    font-size: 14px;
+}
+
+/* Add responsive styles */
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 15px;
+        padding-left: 10px;
+    }
+}

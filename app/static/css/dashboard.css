@@ -90,8 +90,6 @@ body {
   justify-content: end;
   padding-top: 60px;
   padding-bottom: 10px;
-  padding-right: 100px;
-  padding-left: 400px;
 }
 
 button {
@@ -125,6 +123,7 @@ td button:nth-child(2) {
   text-decoration: none;
   font-size: 15px;
   white-space: nowrap; /* Prevent text from wrapping */
+  margin-right: 10px;
 }
 
 .add_new:hover {
@@ -190,6 +189,16 @@ th,td {
   font-size: 16px;
   cursor: pointer;
   border-radius: 15px;
+}
+
+/* styles for task class */
+.task {
+  text-decoration: none;
+  color: #000;
+}
+
+.task:hover {
+  color: #eb4a00;
 }
 
 /* Add responsive styles */

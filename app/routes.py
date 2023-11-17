@@ -101,10 +101,16 @@ def add_task():
         return redirect(url_for('dashboard'))
     return render_template('add_task.html', title='New_task', form=form)
 
+@app.route('/task/<int:task_id>', methods=['GET', 'POST'])
+@login_required
+def task(task_id):
+    task = Task.query.get_or_404(task_id)
+    return render_template('task.html', title='Task',task=task)
+
 @app.route('/edit_task/<int:task_id>', methods=['GET', 'POST'])
 @login_required
 def edit_task(task_id):
-    # Implement editing an existing task logic here
+    # Implement editing a task logic here
     pass
 
 @app.route('/delete_task/<int:task_id>', methods=['POST'])
