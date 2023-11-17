@@ -88,6 +88,16 @@ def dashboard():
 def add_task():
     form = TaskForm()
     if form.validate_on_submit():
+        task = Task(
+            title=form.title.data,
+            description=form.description.data,
+            resources=form.resources.data,
+            challenges=form.challenges.data,
+            achievements=form.achievements.data,
+            user=current_user
+        )
+        db.session.add(task)
+        db.session.commit()
         return redirect(url_for('dashboard'))
     return render_template('add_task.html', title='New_task', form=form)
 

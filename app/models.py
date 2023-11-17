@@ -16,7 +16,7 @@ class User(db.Model, UserMixin):
     tasks = db.relationship('Task', backref='user', lazy=True)
 
     def __repr__(self):
-        return f"User(username='{self.username}', email='{self.email}', image_file='{self.image_file}' password='{self.password}' )"
+        return f"User(username='{self.username}', email='{self.email}', password='{self.password}' )"
     
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)

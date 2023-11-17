@@ -37,8 +37,8 @@
             {% if tasks %}
                 {% for task in tasks %}
                     <tr>
-                        <td>{{ task.title }}</td>
-                        <td>{{ task.created_date }}</td>
+                        <td>{{ task.title }}...</td>
+                        <td>{{ task.created_date.strftime('%a %b %d %Y') }}</td>
                         <td>
                           <button class="toggleButton" onclick="toggleStatus(this)">Uncompleted</button>
                         </td>

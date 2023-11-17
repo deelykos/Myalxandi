@@ -41,18 +41,16 @@ label.logo {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    margin-top:  100px;
+    margin-top:  50px;
     height: 100vh;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-right: 200px;
     padding-left: 20px;
     margin-left: 30px;
     margin-right: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 350px;
     
 }
-
-    
 
 .my-class {
     border: 1px solid wheat;
@@ -64,14 +62,22 @@ label.logo {
     font-size: 20px;
     }
 
+legend {
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+  color:#eb4a00;
+  margin-bottom: 20px;
+}
+
 .form-container p {
     margin-top: 20px;
-    color: #eb4a00;
+    color: black;
     font-weight: bold;
 }
 
 label {
-    font-size: 20px;
+    font-size: 18px;
 } 
 
 .my-submit {
@@ -94,4 +100,8 @@ label {
       font-size: 15px;
       padding-left: 10px;
     }
+
+    label {
+      font-size: 15px;
+  } 
 }

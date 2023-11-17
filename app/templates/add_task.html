@@ -12,6 +12,7 @@
         <form action="" method="POST">
           {{ form.hidden_tag() }}
           <p>
+            <legend>New Task</legend>
             {{ form.title.label }}<br>
             {{ form.title }}<br>
             {% for error in form.title.errors %}
