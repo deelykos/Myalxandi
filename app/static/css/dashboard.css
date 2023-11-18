@@ -74,7 +74,7 @@ label.logo {
   padding: 10px 100px;
 }
 
-/*Adding stles for table*/
+/*Adding styles for table*/
 body {
   overflow:hidden;
 }
@@ -92,23 +92,55 @@ body {
   padding-bottom: 10px;
 }
 
-button {
+.toggleButton{
   outline: none;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   padding: 5px 10px;
   margin-right: 10px;
-}
-
-td button:nth-child(1) {
+  color:black;
   background-color: beige;
-  color: black;
+  font-size: 16px;
 }
 
-td button:nth-child(2) {
+.form-display {
+  display: inline;
+}
+
+.toggleButton{
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 10px;
+  color:black;
+  background-color: beige;
+  border-radius: 15px;
+}
+
+.button-1 {
+  background-color: beige;
+  margin-right: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.button-2 {
   background-color: red;
+  border-radius: 20px;
+  border: none;
+}
+
+i {
   color: #000;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+#i-id {
+  color: white;
 }
 
 .add_new {
@@ -131,7 +163,7 @@ td button:nth-child(2) {
 }
 
 .table_section {
-  height: 480px;
+  height: 500px;
   overflow: auto;
 }
 
@@ -181,14 +213,6 @@ th,td {
 
 .pagination div {
   display: none;
-}
-
-/* styles for the satus section */
-.toggleButton {
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 15px;
 }
 
 /* styles for task class */
@@ -254,8 +278,9 @@ th,td {
 
   .table_section {
     font-size: 12px;
+    height: 450px;
   }
-
+  
   tr th {
     font-size: 14px;
   }
@@ -289,7 +314,6 @@ th,td {
   }
 
   .toggleButton {
-    padding: 6px;
     font-size: 12px;
   }
 }

@@ -10,7 +10,7 @@
 <nav>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
-      <i class="fa-solid fa-bars"></i>
+      <i id="i-id" class="fa-solid fa-bars"></i>
     </label>
     <label class="logo">{{ current_user.username }}'s Task Manager</label>
     <ul>
@@ -34,8 +34,8 @@
               </tr>
           </thead>
           <tbody>
-            {% if tasks %}
-                {% for task in tasks %}
+            {% if user %}
+                {% for task in user %}
                     <tr>
                         <td><a class="task" href="{{ url_for('task', task_id=task.id) }}">{{ task.title }}...</a></td>
                         <td>{{ task.created_date.strftime('%a %b %d %Y') }}</td>
@@ -43,8 +43,17 @@
                           <button class="toggleButton" onclick="toggleStatus(this)">Uncompleted</button>
                         </td>
                         <td>
-                          <button><i class="fa-solid fa-pen-to-square"></i></button>
-                          <button><i class="fa-solid fa-trash"></i></button>
+                          <form class="form-display" action="{{ url_for('edit_task', task_id=task.id)}}">
+                            <button class= "button-1" type="submit">
+                              <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                          </form>
+                          <form class="form-display" action="{{ url_for('delete_task', task_id=task.id)}}" method="POST">
+                            <button class= "button-2" type="submit" onclick="if (!confirm('Are you sure you want to Delete?')) { return false }">
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+                          </form>
+                          
                       </td>
                     </tr>  
                 {% endfor %}

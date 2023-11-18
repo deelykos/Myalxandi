@@ -3,6 +3,7 @@ from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from flask_ckeditor import CKEditorField
 from app.models import User
 
 class SignupForm(FlaskForm):
@@ -51,10 +52,10 @@ class UpdateAccountForm(FlaskForm):
 
 class TaskForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()], render_kw={'class': 'my-class'})
-    description = TextAreaField('Description', validators=[DataRequired()], render_kw={'class': 'my-class'})
-    resources = TextAreaField('Study Materials', render_kw={'class': 'my-class'})
-    challenges = TextAreaField('Challenges', render_kw={'class': 'my-class'})
-    achievements = TextAreaField('Achievements', render_kw={'class': 'my-class'})
+    description = CKEditorField('Description')
+    resources = CKEditorField('Study Materials')
+    challenges = CKEditorField('Challenges')
+    achievements = CKEditorField('Achievements')
     submit = SubmitField('Save Task', render_kw={'class': 'my-submit'})
     
 

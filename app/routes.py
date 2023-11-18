@@ -80,8 +80,8 @@ def account():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    tasks = User.query.filter_by(username=current_user.username).first().tasks
-    return render_template('dashboard.html', title='Dashboard', tasks=tasks)
+    user = User.query.filter_by(username=current_user.username).first().tasks
+    return render_template('dashboard.html', title='Dashboard', user=user)
 
 @app.route('/add_task', methods=['GET', 'POST'])
 @login_required
@@ -99,7 +99,7 @@ def add_task():
         db.session.add(task)
         db.session.commit()
         return redirect(url_for('dashboard'))
-    return render_template('add_task.html', title='New_task', form=form)
+    return render_template('add_task.html', title='New_task', form=form, legend='New Task')
 
 @app.route('/task/<int:task_id>', methods=['GET', 'POST'])
 @login_required
@@ -110,11 +110,29 @@ def task(task_id):
 @app.route('/edit_task/<int:task_id>', methods=['GET', 'POST'])
 @login_required
 def edit_task(task_id):
-    # Implement editing a task logic here
-    pass
+    task = Task.query.get_or_404(task_id)
+    form = TaskForm()
+    if form.validate_on_submit():
+        task.title = form.title.data
+        task.description = form.description.data
+        task.resources = form.resources.data
+        task.challenges = form.challenges.data
+        task.achievements = form.achievements.data
+        db.session.commit()
+        return redirect(url_for('dashboard', task_id=task.id))
+    elif request.method == 'GET':
+        form.title.data = task.title
+        form.description.data = task.description
+        form.resources.data = task.resources
+        form.challenges.data = task.challenges
+        form.achievements.data = task.achievements
+    return render_template('add_task.html', title='Edit_task', form=form, legend='Edit Task')
+
 
 @app.route('/delete_task/<int:task_id>', methods=['POST'])
 @login_required
 def delete_task(task_id):
-    # Implement deleting a task logic here
-    pass
+     task = Task.query.get_or_404(task_id)
+     db.session.delete(task)
+     db.session.commit()
+     return redirect(url_for('dashboard'))

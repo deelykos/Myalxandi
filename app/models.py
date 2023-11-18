@@ -34,5 +34,5 @@ class Task(db.Model):
             f"Task({self.id}, title='{self.title}', "
             f"description='{self.description}', resources='{self.resources}', "
             f"challenges='{self.challenges}', achievements='{self.achievements}', "
-            f"created_date={self.created_date}, due_date={self.due_date}, completed={self.completed})"
+            f"created_date={self.created_date})"
         )

@@ -31,13 +31,16 @@ label.logo {
     padding: 10px 100px;
 }
 
+body {
+    background-color: beige;
+}
+
 .task-detail {
     display: block;
     margin: auto;
     padding-top: 100px;
     max-width: 600px; /* Adjust the max-width to your preference */
     text-align: center;
-    background-color: beige;
 }
 
 .task-title {

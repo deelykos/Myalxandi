@@ -5,14 +5,14 @@
 {% endblock %}
 {% block body %}
 <nav>
-  <label class="logo">{{ current_user.username }}'s Task Manager</label>
+  <a href="{{ url_for('dashboard') }}" class="logo">{{ current_user.username }}'s Task Manager</a>
 </nav>
 <div class="task-container">
     <div class="form-container">
         <form action="" method="POST">
           {{ form.hidden_tag() }}
           <p>
-            <legend>New Task</legend>
+            <legend>{{ legend }}</legend>
             {{ form.title.label }}<br>
             {{ form.title }}<br>
             {% for error in form.title.errors %}
@@ -21,35 +21,40 @@
           </p>
           <p>
             {{ form.description.label }}<br>
-            {{ form.description }}<br>
+            {{ form.description|safe }}<br>
             {% for error in form.description.errors %}
             <span>{{ error }}</span>
             {% endfor %}
           </p>
           <p>
             {{ form.resources.label }}<br>
-            {{ form.resources }}<br>
+            {{ form.resources|safe }}<br>
             {% for error in form.resources.errors %}
             <span>{{ error }}</span>
             {% endfor %}
           </p>
           <p>
             {{ form.achievements.label }}<br>
-            {{ form.achievements }}<br>
+            {{ form.achievements|safe }}<br>
             {% for error in form.achievements.errors %}
             <span>{{ error }}</span>
             {% endfor %}
           </p>
           <p>
             {{ form.challenges.label }}<br>
-            {{ form.challenges }}<br>
+            {{ form.challenges|safe }}<br>
             {% for error in form.challenges.errors %}
             <span>{{ error }}</span>
             {% endfor %}
           </p>
           <p>{{ form.submit() }}</p>
           <small>
-        <form>
+        </form>
+        {{ ckeditor.load() }}
+        {{ ckeditor.config(name='description') }}
+        {{ ckeditor.config(name='resources') }}
+        {{ ckeditor.config(name='achievements') }}
+        {{ ckeditor.config(name='challenges') }}
     <div>
 </div>
 {% endblock %}
