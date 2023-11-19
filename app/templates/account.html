@@ -23,34 +23,34 @@
     <p class="account-email">{{ current_user.email }}</p>
   </div>
   <div class="UpdateAccountForm">
-  <form action="" method="POST" enctype="multipart/form-data">
-    {{ form.hidden_tag() }}
-    <p>
-      <legend>Account Info</legend>
-      {{ form.username.label }}<br>
-      {{ form.username }}<br>
-      {% for error in form.username.errors %}
-      <span>{{ error }}</span>
-      {% endfor %}
-    </p>
-    <p>
-      {{ form.email.label }}<br>
-      {{ form.email }}<br>
-      {% for error in form.email.errors %}
-      <span>{{ error }}</span>
-      {% endfor %}
-    </p>
-    <p>
-      {{ form.picture.label() }}
-      {{ form.picture }}
-      {% if form.picture.errors %}
-          {% for error in form.picture.errors %}
-              <span>{{ error }}</span><br>
-          {% endfor %}
-      {% endif %}
-    </p>
-    <p>{{ form.submit() }}</p>
-  </form>
+    <form action="" method="POST" enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+      <p>
+        <legend>Account Info</legend>
+        {{ form.username.label }}<br>
+        {{ form.username }}<br>
+        {% for error in form.username.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.email.label }}<br>
+        {{ form.email }}<br>
+        {% for error in form.email.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.picture.label() }}
+        {{ form.picture }}
+        {% if form.picture.errors %}
+            {% for error in form.picture.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        {% endif %}
+      </p>
+      <p>{{ form.submit() }}</p>
+    </form>
   </div>
 </div>  
 {% endblock %}

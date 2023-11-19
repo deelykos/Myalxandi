@@ -5,7 +5,7 @@
 {% endblock %}
 {% block body %}
 <nav>
-    <label class="logo">{{ current_user.username }}'s Task Manager</label>
+    <a href="{{ url_for('dashboard') }}" class="logo">{{ current_user.username }}'s Task Manager</a>
 </nav>
 <div class="task-detail">
     <h2 class="task-title">{{ task.title }}</h2>

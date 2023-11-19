@@ -19,10 +19,11 @@ nav {
     padding: 10px 0;
     z-index: 3;
     background-color: rgb(51, 49, 49);
+    margin-bottom: 100px;
 }
 
 /* Logo link styling */
-label.logo {
+.logo {
     text-decoration: none;
     color: #eb4a00;
     text-shadow: 3px;
@@ -41,16 +42,22 @@ body {
     padding-top: 100px;
     max-width: 600px; /* Adjust the max-width to your preference */
     text-align: center;
+    padding-left: 20px;
+    border: 1px solid black;
+    box-shadow: 0px 0px 4px 0px black;
+    background-color:rgb(245, 245, 213);
 }
 
 .task-title {
     font-size: 24px;
+    text-align: center;
 }
 
 .created-date {
     font-size: 12px;
     margin-bottom: 50px;
     color: gray;
+    text-align: center;
 }
 
 .detail-section {
@@ -66,12 +73,29 @@ body {
 
 .detail-text {
     font-size: 14px;
+    padding-left: 20px;
 }
 
 /* Add responsive styles */
 @media (max-width: 952px) {
-    label.logo {
+    .logo {
         font-size: 15px;
         padding-left: 10px;
+    }
+
+    .detail-text {
+        padding-left: 20px;
+    }
+
+    .created-date {
+        text-align: center;
+    }
+
+    .task-detail {
+        text-align: left;
+        margin-left: 15px;
+        border: none;
+        box-shadow: none;
+        background-color: beige;
     }
 }
