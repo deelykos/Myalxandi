@@ -95,29 +95,28 @@ body {
 .toggleButton{
   outline: none;
   border: none;
-  border-radius: 6px;
+  border-radius: 15px;
   cursor: pointer;
   padding: 5px 10px;
   margin-right: 10px;
   color:black;
-  background-color: beige;
   font-size: 16px;
+  background-color: beige;
 }
+
+/* Style for Completed */
+.toggleButton.completed {
+  background-color: green;
+}
+
+/* Style for Uncompleted */
+.toggleButton.Uncompleted {
+  background-color: beige;
+}
+
 
 .form-display {
   display: inline;
-}
-
-.toggleButton{
-  outline: none;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  padding: 5px 10px;
-  margin-right: 10px;
-  color:black;
-  background-color: beige;
-  border-radius: 15px;
 }
 
 .button-1 {

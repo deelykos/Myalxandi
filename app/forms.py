@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from sqlalchemy import func
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask_ckeditor import CKEditorField
 from app.models import User
@@ -18,10 +19,11 @@ class SignupForm(FlaskForm):
         if user is not None:
             raise ValidationError('Username already exits.')
 
+        
     def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first()
-        if user is not None:
+        if User.query.filter(func.lower(User.email) == func.lower(email.data)).first():
             raise ValidationError('Email address already exits.')
+
 
 
 class LoginForm(FlaskForm):
@@ -45,7 +47,7 @@ class UpdateAccountForm(FlaskForm):
 
     def validate_email(self, email):
         if email.data != current_user.email:
-            user = User.query.filter_by(email=email.data).first()
+            user = User.query.filter(func.lower(User.email) == func.lower(email.data)).first()
             if user is not None:
                 raise ValidationError('Email address already exits.')
     
@@ -59,4 +61,17 @@ class TaskForm(FlaskForm):
     submit = SubmitField('Save Task', render_kw={'class': 'my-submit'})
     
 
+class RequestResetForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()], render_kw={'class': 'my-class'})
+    submit = SubmitField('Request Password Reset', render_kw={'class': 'my-submit'})
 
+    def validate_email(self, email):
+         user = User.query.filter(func.lower(User.email) == func.lower(email.data)).first()
+         if user is None:
+            raise ValidationError('Kindly signup first.')
+        
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=6)], render_kw={'class': 'my-class'})
+    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')], render_kw={'class': 'my-class'})
+    submit = SubmitField('Reset Password', render_kw={'class': 'my-submit'})

@@ -22,7 +22,7 @@
     padding: 10px 100px;
     position: fixed;
     width: 100%;
-    background-color: rgb(51, 49, 49);
+    background-color:rgb(51, 49, 49);
     z-index: 2;
   }
   
@@ -33,13 +33,13 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
+    overflow-x: hidden;
     filter: blur(3px) brightness(0.4);
     z-index: -1;
   }
   
-  /* Styling form signup form */
-  .signupform {
+  /* Styling for resetform */
+  .resetform {
     color: white;
     font-weight: bold;
     border-radius: 70px;
@@ -52,12 +52,12 @@
     margin-left: 50px;
     margin-right: 50px;
   }
-
-  .signupform p {
+  
+  .resetform p {
     margin: 10px;
   }
-
-  .signupform p span {
+  
+  .resetform p span {
     color: red;
     font-weight: lighter;
     font-size: 12px;
@@ -67,15 +67,15 @@
     color: #eb4a00; 
     margin-bottom: 20px;
     font-size: 30px;
-    margin-top: 200px;
+    margin-top: 250px;
   }
-
-.my-class {
-  border: 1px solid #ddd;
-  padding: 8px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  width: 200%;
+  
+  .my-class {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 200%;
   }
   
   label {
@@ -92,47 +92,60 @@
     margin-bottom: 10px;
     border: none;
   }
-
+  
   .my-submit:hover {
     color: white;
     cursor: pointer;
   }
   
   /*styling small element */
-small a {
-  color: #eb4a00;
-  text-decoration: none;
-}
-
-small {
+  small a {
+    color: #eb4a00;
+    text-decoration: none;
+  }
+  
+  small {
+    margin-left: 12px;
+  }
+  
+  /* styling flash message */
+.flash-message {
+  color: green;
+  font-size: 12px;
+  font-weight: lighter;
   margin-left: 11px;
+  margin-right: 10px;
 }
-
+ 
   /* Add responsive styles */
   @media (max-width: 952px) {
-    .signupform p {
+    .resetform p {
       margin: 14px;
     }
-
-    .signupform p span {
+    
+    .resetform p span {
       font-size: 11px;
     }
-
-    .signupform {
+  
+    .resetform {
       margin-left: 20px;
       margin-right: 40px;
       left: 25%;
     }
-    
+  
     .logo a {
-      font-size: 30px;
-      width: 100%;
       padding-left: 40px;
+      font-size: 30px;
     }
   
     small {
       font-size: 12px;
-      margin-left: 9px;
+      margin-left: 13px;
     }
-
+  
+    .flash-message {
+      color: red;
+      font-size: 10px;
+    }
+  
   }

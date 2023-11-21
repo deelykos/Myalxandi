@@ -1,5 +1,6 @@
-from datetime import datetime
-from app import db, login
+from datetime import datetime, timedelta
+import jwt
+from app import db, login, app
 from flask_login import UserMixin
 
 
@@ -15,6 +16,27 @@ class User(db.Model, UserMixin):
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     tasks = db.relationship('Task', backref='user', lazy=True)
 
+    def get_reset_token(self, expires_sec=300):
+        secret_key = app.config['SECRET_KEY']
+        payload = {
+            'user_id': self.id,
+            'exp': datetime.utcnow() + timedelta(seconds=expires_sec)
+        }
+        token = jwt.encode(payload, secret_key, algorithm='HS256')
+        return token
+    
+    @staticmethod
+    def verify_reset_token(token):
+        secret_key = app.config['SECRET_KEY']
+        try:
+            payload = jwt.decode(token, secret_key, algorithms=['HS256'])
+            user_id = payload['user_id']
+        except jwt.ExpiredSignatureError:
+            return None
+        except jwt.InvalidTokenError:
+            return None
+        return User.query.get(user_id)
+
     def __repr__(self):
         return f"User(username='{self.username}', email='{self.email}', password='{self.password}' )"
     
@@ -26,6 +48,7 @@ class Task(db.Model):
     challenges = db.Column(db.Text, nullable=True)
     achievements = db.Column(db.Text, nullable=True)
     created_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    completed = db.Column(db.Boolean, default=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 

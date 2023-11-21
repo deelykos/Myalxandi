@@ -1,0 +1,43 @@
+{% extends "home.html" %}
+
+{%  block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/reset_token.css') }}">
+{% endblock %}
+{% block body %}
+<div class="logo">
+  <a href="{{ url_for('home') }}">Myalxandi</a>
+</div>  
+<div class="Bgimage">
+    <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Background Image">
+</div>
+<div class="resettokenform">
+  <form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        <legend>Reset Password</legend>
+        {{ form.password.label }}<br>
+        {{ form.password }}<br>
+        {% for error in form.password.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.confirm_password.label }}<br>
+        {{ form.confirm_password }}<br>
+        {% for error in form.confirm_password.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <span class="flash-message">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        {% endif %}     
+      {% endwith %}
+    </span>
+    <p>{{ form.submit() }}</p>
+  </form>
+</div>
+{% endblock %}

@@ -1,11 +1,13 @@
 import os
 import secrets
 from PIL import Image
-from flask import render_template, url_for, flash, redirect, request
-from app import app, db, bcrypt
-from app.forms import SignupForm, LoginForm, UpdateAccountForm, TaskForm
+from flask import render_template, url_for, flash, redirect, request, jsonify
+from app import app, db, bcrypt, mail
+from sqlalchemy import func
+from app.forms import SignupForm, LoginForm, UpdateAccountForm, TaskForm, RequestResetForm, ResetPasswordForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Task
+from flask_mail import Message
 
 @app.route('/')
 @app.route('/home')
@@ -31,7 +33,7 @@ def login():
         return redirect(url_for('dashboard'))
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
+        user = User.query.filter(func.lower(User.email) == func.lower(form.email.data)).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
            login_user(user, remember=form.remember_me.data)
            return redirect(url_for('dashboard'))
@@ -136,3 +138,49 @@ def delete_task(task_id):
      db.session.delete(task)
      db.session.commit()
      return redirect(url_for('dashboard'))
+
+def send_reset_email(user):
+    token = user.get_reset_token()
+    msg = Message('Password Reset Request', sender='noreply@demo.com', recipients=[user.email])
+    msg.body = f'''To reset your password, visit the following link: {url_for('reset_token', token=token, _external=True)}
+
+    If you did not make this request, simply ignore this email and no changes will be made to your password.
+    '''
+    mail.send(msg)
+
+@app.route('/reset_password', methods=['GET', 'POST'])
+def reset_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('logout'))
+    form = RequestResetForm()
+    if form.validate_on_submit():
+        user = User.query.filter(func.lower(User.email) == func.lower(form.email.data)).first()
+        send_reset_email(user)
+        flash('Email successfully sent')
+        return redirect(url_for('login'))
+    return render_template('reset_request.html', title='Reset Password', form=form)
+
+@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_token(token):
+    if current_user.is_authenticated:
+         return redirect(url_for('logout'))
+    user = User.verify_reset_token(token)
+    if user is None:
+        flash('Invalid or Expired token')
+        return redirect(url_for('reset_request'))
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user.password = hashed_password
+        db.session.commit()
+        flash('Password update successful!')
+        return redirect(url_for('login'))
+    return render_template('reset_token.html', title='Reset Password', form=form)
+
+@app.route('/update_status/<int:task_id>', methods=['POST'])
+def update_status(task_id):
+    task = Task.query.get_or_404(task_id)
+    task.completed = not task.completed
+    db.session.commit()
+
+    return jsonify({'completed': task.completed})

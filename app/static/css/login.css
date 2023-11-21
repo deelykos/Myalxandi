@@ -105,14 +105,15 @@ small a {
 }
 
 small {
-  margin-left: 22px;
+  margin-left: 12px;
 }
 
 /* styling flash message */
 .flash-message {
   color: red;
-  font-size: small;
-  margin-left: 20px;
+  font-size: 12px;
+  font-weight: lighter;
+  margin-left: 11px;
   margin-right: 10px;
 }
 
@@ -139,7 +140,7 @@ small {
 
   small {
     font-size: 12px;
-    margin-left: 0;
+    margin-left: 9px;
   }
 
   .flash-message {

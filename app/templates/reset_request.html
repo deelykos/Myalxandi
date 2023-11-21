@@ -1,7 +1,7 @@
 {% extends "home.html" %}
 
 {%  block styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/reset_request.css') }}">
 {% endblock %}
 {% block body %}
 <div class="logo">
@@ -10,11 +10,11 @@
 <div class="Bgimage">
     <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Background Image">
 </div>
-<div class="loginform">
+<div class="resetform">
     <form action="" method="POST">
       {{ form.hidden_tag() }}
       <p>
-        <legend>Login</legend>
+        <legend>Reset Password</legend>
         {{ form.email.label }}<br>
         {{ form.email }}<br>
         {% for error in form.email.errors %}
@@ -30,20 +30,9 @@
           {% endif %}     
         {% endwith %}
       </span>
-      <p>
-        {{ form.password.label }}<br>
-        {{ form.password }}<br>
-        {% for error in form.password.errors %}
-        <span>{{ error }}</span>
-        {% endfor %}
-      </p>
-      <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
       <p>{{ form.submit() }}</p>
       <small>
-        <a href="{{ url_for('reset_request') }}">Forgot Password?</a><br>
-      </small>
-      <small>
-        <a href="{{ url_for('signup') }}">Don't have an account?</a>
+        <a href="{{ url_for('login') }}">Go to Login</a>
       </small>
     </form>
   </div>

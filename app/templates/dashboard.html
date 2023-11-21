@@ -40,7 +40,13 @@
                         <td><a class="task" href="{{ url_for('task', task_id=task.id) }}">{{ task.title }}...</a></td>
                         <td>{{ task.created_date.strftime('%a %b %d %Y') }}</td>
                         <td>
-                          <button class="toggleButton" onclick="toggleStatus(this)">Uncompleted</button>
+                          <button class="toggleButton {% if task.completed %}completed{% endif %}" onclick="toggleStatus(this, '{{ task.id }}')">
+                              {% if task.completed %}
+                                  Completed
+                              {% else %}
+                                  Uncompleted
+                              {% endif %}
+                          </button>
                         </td>
                         <td>
                           <form class="form-display" action="{{ url_for('edit_task', task_id=task.id)}}">

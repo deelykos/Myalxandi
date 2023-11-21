@@ -39,7 +39,7 @@
   }
   
   /* Styling form signup form */
-  .signupform {
+  .resettokenform {
     color: white;
     font-weight: bold;
     border-radius: 70px;
@@ -53,14 +53,14 @@
     margin-right: 50px;
   }
 
-  .signupform p {
+  .resettokenform p {
     margin: 10px;
   }
 
-  .signupform p span {
+  .resettokenform p span {
     color: red;
     font-weight: lighter;
-    font-size: 12px;
+    font-size: 13px;
   }
   
   legend {
@@ -108,17 +108,24 @@ small {
   margin-left: 11px;
 }
 
+/* styling flash message */
+  .flash-message {
+    color: green;
+    font-size: small;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
   /* Add responsive styles */
   @media (max-width: 952px) {
-    .signupform p {
+    .resettokenform p {
       margin: 14px;
     }
 
-    .signupform p span {
+    .resettokenform p span {
       font-size: 11px;
     }
 
-    .signupform {
+    .resettokenform {
       margin-left: 20px;
       margin-right: 40px;
       left: 25%;
@@ -133,6 +140,11 @@ small {
     small {
       font-size: 12px;
       margin-left: 9px;
+    }
+
+    .flash-message {
+      color: green;
+      font-size: 10px;
     }
 
   }
