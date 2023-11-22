@@ -156,8 +156,7 @@ def reset_request():
     if form.validate_on_submit():
         user = User.query.filter(func.lower(User.email) == func.lower(form.email.data)).first()
         send_reset_email(user)
-        flash('Email successfully sent')
-        return redirect(url_for('login'))
+        flash('Email successfully sent!!')
     return render_template('reset_request.html', title='Reset Password', form=form)
 
 @app.route('/reset_password/<token>', methods=['GET', 'POST'])
@@ -173,8 +172,7 @@ def reset_token(token):
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user.password = hashed_password
         db.session.commit()
-        flash('Password update successful!')
-        return redirect(url_for('login'))
+        flash('Password update successful!!')
     return render_template('reset_token.html', title='Reset Password', form=form)
 
 @app.route('/update_status/<int:task_id>', methods=['POST'])

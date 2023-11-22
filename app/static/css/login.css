@@ -58,7 +58,7 @@
 }
 
 .loginform p span {
-  color: red;
+  background-color: red;
   font-weight: lighter;
   font-size: 13px;
 }
@@ -110,7 +110,7 @@ small {
 
 /* styling flash message */
 .flash-message {
-  color: red;
+  background-color: red;
   font-size: 12px;
   font-weight: lighter;
   margin-left: 11px;
@@ -144,7 +144,6 @@ small {
   }
 
   .flash-message {
-    color: red;
     font-size: 10px;
   }
 

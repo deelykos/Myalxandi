@@ -58,7 +58,7 @@
   }
 
   .signupform p span {
-    color: red;
+    background-color: red;
     font-weight: lighter;
     font-size: 12px;
   }

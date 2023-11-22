@@ -15,7 +15,7 @@ function toggleStatus(button, taskId) {
     .then(data => {
         // Update the button style and text based on the updated status from the server
         if (data.completed) {
-            button.style.backgroundColor = 'green';
+            button.style.backgroundColor = 'rgb(9, 167, 9)';
             button.innerHTML = 'Completed';
         } else {
             button.style.backgroundColor = 'beige';

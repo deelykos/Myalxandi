@@ -38,6 +38,9 @@
       {% endwith %}
     </span>
     <p>{{ form.submit() }}</p>
+    <small>
+      <a href="{{ url_for('login') }}">Go to Login</a>
+    </small>
   </form>
 </div>
 {% endblock %}

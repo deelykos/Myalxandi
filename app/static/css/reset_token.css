@@ -110,8 +110,9 @@ small {
 
 /* styling flash message */
   .flash-message {
-    color: green;
+    background-color: green;
     font-size: small;
+    font-weight: lighter;
     margin-left: 20px;
     margin-right: 10px;
   }
@@ -143,7 +144,6 @@ small {
     }
 
     .flash-message {
-      color: green;
       font-size: 10px;
     }
 

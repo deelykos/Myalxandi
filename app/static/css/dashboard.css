@@ -106,14 +106,13 @@ body {
 
 /* Style for Completed */
 .toggleButton.completed {
-  background-color: green;
+  background-color: rgb(9, 167, 9);
 }
 
 /* Style for Uncompleted */
 .toggleButton.Uncompleted {
   background-color: beige;
 }
-
 
 .form-display {
   display: inline;
@@ -127,7 +126,7 @@ body {
 }
 
 .button-2 {
-  background-color: red;
+  background-color: rgb(255, 9, 9);
   border-radius: 6px;
   border: none;
 }
