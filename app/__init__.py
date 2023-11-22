@@ -13,7 +13,7 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
-login.login_view = 'login'
+login.login_view = 'users.login'
 app.config['CKEDITOR_HEIGHT'] = 100  # px
 app.config['CKEDITOR_WDITH'] = 40  # px
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -27,4 +27,13 @@ mail = Mail(app)
 bcrypt = Bcrypt(app)
 ckeditor = CKEditor(app)
 
-from app import routes, models
+from app import models
+from app.users.routes import users
+from app.tasks.routes import tasks
+from app.main.routes import main
+
+app.register_blueprint(users)
+app.register_blueprint(tasks)
+app.register_blueprint(main)
+
+

@@ -5,7 +5,7 @@
 {% endblock %}
 {% block body %}
 <div class="logo">
-  <a href="{{ url_for('home') }}">Myalxandi</a>
+  <a href="{{ url_for('main.home') }}">Myalxandi</a>
 </div>
 <div class="Bgimage">
     <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Background Image">
@@ -40,10 +40,10 @@
       <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
       <p>{{ form.submit() }}</p>
       <small>
-        <a href="{{ url_for('reset_request') }}">Forgot Password?</a><br>
+        <a href="{{ url_for('users.reset_request') }}">Forgot Password?</a><br>
       </small>
       <small>
-        <a href="{{ url_for('signup') }}">Don't have an account?</a>
+        <a href="{{ url_for('users.signup') }}">Don't have an account?</a>
       </small>
     </form>
   </div>

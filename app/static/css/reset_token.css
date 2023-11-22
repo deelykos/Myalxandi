@@ -58,7 +58,7 @@
   }
 
   .resettokenform p span {
-    color: red;
+    background-color: red;
     font-weight: lighter;
     font-size: 13px;
   }
@@ -113,7 +113,7 @@ small {
     background-color: green;
     font-size: small;
     font-weight: lighter;
-    margin-left: 20px;
+    margin-left: 11px;
     margin-right: 10px;
   }
   /* Add responsive styles */
@@ -145,6 +145,7 @@ small {
 
     .flash-message {
       font-size: 10px;
+      margin-left: 13px;
     }
 
   }

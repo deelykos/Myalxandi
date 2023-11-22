@@ -14,13 +14,13 @@
     </label>
     <label class="logo">{{ current_user.username }}'s Task Manager</label>
     <ul>
-      <li><a class="active" href="{{ url_for('account') }}">Account</a></li>
+      <li><a class="active" href="{{ url_for('users.account') }}">Account</a></li>
     </ul> 
 </nav>
 <div class="table">
   <div class="table_header">
     <div>
-      <a class="add_new" href="{{ url_for('add_task') }}">+ Add Task</a>
+      <a class="add_new" href="{{ url_for('tasks.add_task') }}">+ Add Task</a>
    </div>
   </div>
   <div class="table_section">
@@ -37,7 +37,7 @@
             {% if user %}
                 {% for task in user %}
                     <tr>
-                        <td><a class="task" href="{{ url_for('task', task_id=task.id) }}">{{ task.title }}...</a></td>
+                        <td><a class="task" href="{{ url_for('tasks.task', task_id=task.id) }}">{{ task.title }}...</a></td>
                         <td>{{ task.created_date.strftime('%a %b %d %Y') }}</td>
                         <td>
                           <button class="toggleButton {% if task.completed %}completed{% endif %}" onclick="toggleStatus(this, '{{ task.id }}')">
@@ -49,12 +49,12 @@
                           </button>
                         </td>
                         <td>
-                          <form class="form-display" action="{{ url_for('edit_task', task_id=task.id)}}">
+                          <form class="form-display" action="{{ url_for('tasks.edit_task', task_id=task.id)}}">
                             <button class= "button-1" type="submit">
                               <i class="fa-solid fa-pen-to-square"></i>
                             </button>
                           </form>
-                          <form class="form-display" action="{{ url_for('delete_task', task_id=task.id)}}" method="POST">
+                          <form class="form-display" action="{{ url_for('tasks.delete_task', task_id=task.id)}}" method="POST">
                             <button class= "button-2" type="submit" onclick="if (!confirm('Are you sure you want to Delete?')) { return false }">
                               <i class="fa-solid fa-trash"></i>
                             </button>

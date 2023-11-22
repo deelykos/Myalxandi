@@ -11,8 +11,8 @@
   </label>
   <label class="logo">{{ current_user.username }}'s Task Manager</label>
   <ul>
-    <li><a class="active" href="{{ url_for('dashboard') }}">Dashboard</a></li>
-    <li><a class="active" href="{{ url_for('logout') }}">Logout</a></li>
+    <li><a class="active" href="{{ url_for('tasks.dashboard') }}">Dashboard</a></li>
+    <li><a class="active" href="{{ url_for('users.logout') }}">Logout</a></li>
   </ul> 
 </nav>
 </nav>

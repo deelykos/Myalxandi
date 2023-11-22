@@ -4,8 +4,9 @@ from flask_login import current_user
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from sqlalchemy import func
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from flask_ckeditor import CKEditorField
 from app.models import User
+
+
 
 class SignupForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=6)], render_kw={'class': 'my-class'})
@@ -50,16 +51,7 @@ class UpdateAccountForm(FlaskForm):
             user = User.query.filter(func.lower(User.email) == func.lower(email.data)).first()
             if user is not None:
                 raise ValidationError('Email address already exits.')
-    
-
-class TaskForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired()], render_kw={'class': 'my-class'})
-    description = CKEditorField('Description')
-    resources = CKEditorField('Study Materials')
-    challenges = CKEditorField('Challenges')
-    achievements = CKEditorField('Achievements')
-    submit = SubmitField('Save Task', render_kw={'class': 'my-submit'})
-    
+            
 
 class RequestResetForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()], render_kw={'class': 'my-class'})

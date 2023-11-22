@@ -58,7 +58,7 @@
   }
   
   .resetform p span {
-    color: red;
+    background-color: red;
     font-weight: lighter;
     font-size: 12px;
   }
@@ -145,6 +145,7 @@
   
     .flash-message {
       font-size: 10px;
+      margin-left: 13px;
     }
   
   }

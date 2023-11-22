@@ -5,7 +5,7 @@
 {% endblock %}
 {% block body %}
 <div class="logo">
-  <a href="{{ url_for('home') }}">Myalxandi</a>
+  <a href="{{ url_for('main.home') }}">Myalxandi</a>
 </div>  
 <div class="Bgimage">
     <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Background Image">
@@ -44,7 +44,7 @@
     </p>
     <p>{{ form.submit() }}</p>
     <small>
-      <a href="{{ url_for('login') }}">Already have an account?</a>
+      <a href="{{ url_for('users.login') }}">Already have an account?</a>
     </small>
   </form>
 </div>
