@@ -1,4 +1,3 @@
-import os
 from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
@@ -14,14 +13,6 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'users.login'
-app.config['CKEDITOR_HEIGHT'] = 100  # px
-app.config['CKEDITOR_WDITH'] = 40  # px
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USERNAME'] = 'fabianohaz@gmail.com'
-app.config['MAIL_PASSWORD'] = os.environ.get('PASSWORD')
 mail = Mail(app)
 
 bcrypt = Bcrypt(app)
