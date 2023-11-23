@@ -12,6 +12,17 @@ users = Blueprint('users', __name__)
 
 @users.route('/signup', methods=['GET', 'POST'])
 def signup():
+    """
+    Handle user registration.
+
+    Returns:
+        str: The HTML content of the rendered 'signup.html' template.
+
+    Example:
+        The function is a Flask route handler for the '/signup' route.
+        It handles the form submission for user registration and redirects to the login page upon success.
+    """
+
     if current_user.is_authenticated:
         return redirect(url_for('tasks.dashboard'))
     form = SignupForm()
@@ -25,6 +36,17 @@ def signup():
 
 @users.route('/login', methods=['GET', 'POST'])
 def login():
+    """
+    Handle user login.
+
+    Returns:
+        str: The HTML content of the rendered 'login.html' template.
+
+    Example:
+        The function is a Flask route handler for the '/login' route.
+        It handles the form submission for user login and redirects to the dashboard upon success.
+    """
+
     if current_user.is_authenticated:
         return redirect(url_for('tasks.dashboard'))
     form = LoginForm()
@@ -40,6 +62,17 @@ def login():
 
 @users.route('/logout')
 def logout():
+    """
+    Handle user logout.
+
+    Returns:
+        Response: A redirect response to the login page.
+
+    Example:
+        The function is a Flask route handler for the '/logout' route.
+        It logs out the current user and redirects to the login page.
+    """
+
     logout_user()
     return redirect(url_for('users.login'))
 
@@ -47,6 +80,17 @@ def logout():
 @users.route('/account', methods=['GET', 'POST'])
 @login_required
 def account():
+    """
+    Handle user account settings.
+
+    Returns:
+        str: The HTML content of the rendered 'account.html' template.
+
+    Example:
+        The function is a Flask route handler for the '/account' route.
+        It handles the form submission for updating user account information and redirects to the account page upon success.
+    """
+
     form = UpdateAccountForm()
     if form.validate_on_submit():
         if form.picture.data:
@@ -65,6 +109,17 @@ def account():
 
 @users.route('/reset_password', methods=['GET', 'POST'])
 def reset_request():
+    """
+    Handle user password reset request.
+
+    Returns:
+        str: The HTML content of the rendered 'reset_request.html' template.
+
+    Example:
+        The function is a Flask route handler for the '/reset_password' route.
+        It handles the form submission for requesting a password reset and displays a success message.
+    """
+
     if current_user.is_authenticated:
         return redirect(url_for('users.logout'))
     form = RequestResetForm()
@@ -76,6 +131,20 @@ def reset_request():
 
 @users.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_token(token):
+    """
+    Handle user password reset with a token.
+
+    Args:
+        token (str): The reset token.
+
+    Returns:
+        str: The HTML content of the rendered 'reset_token.html' template.
+
+    Example:
+        The function is a Flask route handler for the '/reset_password/<token>' route.
+        It validates the token, handles the form submission for resetting the password, and displays a success message.
+    """
+    
     if current_user.is_authenticated:
          return redirect(url_for('users.logout'))
     user = User.verify_reset_token(token)
