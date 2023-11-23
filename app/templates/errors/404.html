@@ -1,0 +1,10 @@
+{% extends "home.html" %}
+
+{%  block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/404.css') }}">
+{% endblock %}
+
+{% block body %}
+<h1>404 - Not Found</h1>
+    <p>The page you are looking for might be in another castle!</p>
+{% endblock %}

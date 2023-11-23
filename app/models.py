@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import jwt
-from app import db, login, app
+from flask import current_app
+from app import db, login
 from flask_login import UserMixin
 
 
@@ -17,7 +18,7 @@ class User(db.Model, UserMixin):
     tasks = db.relationship('Task', backref='user', lazy=True)
 
     def get_reset_token(self, expires_sec=300):
-        secret_key = app.config['SECRET_KEY']
+        secret_key = current_app.config['SECRET_KEY']
         payload = {
             'user_id': self.id,
             'exp': datetime.utcnow() + timedelta(seconds=expires_sec)
@@ -27,7 +28,7 @@ class User(db.Model, UserMixin):
     
     @staticmethod
     def verify_reset_token(token):
-        secret_key = app.config['SECRET_KEY']
+        secret_key = current_app.config['SECRET_KEY']
         try:
             payload = jwt.decode(token, secret_key, algorithms=['HS256'])
             user_id = payload['user_id']
