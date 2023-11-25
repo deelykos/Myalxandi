@@ -1,0 +1,41 @@
+{% extends "home.html" %}
+
+{%  block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block body %}
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fa-solid fa-bars"></i>
+    </label>
+    <label class="logo">Myalxandi</label>
+    <ul>
+      <li><a class="active-0"  href="{{ url_for('main.home') }}">About</a></li>
+      <li><a class="active"  href="{{ url_for('users.login') }}">Log in</a></li>
+      <li><a class="active" href="{{ url_for('users.signup') }}">Sign up</a></li>
+    </ul>
+  </nav>
+  <div class="center">
+    <h1>CONTACT US:</h1>
+    <p>
+      <span class="i-second">
+        <a class="active-1" href="https://github.com/smylinwolf">
+          <i class="fa-brands fa-github fa-beat-fade fa-2xl"></i>
+        </a>
+      </span>    
+      <a class="active-1" href="mailto:fabianohaz@gmail.com">
+        <i class="fa-solid fa-envelope fa-bounce fa-2xl"></i>
+      </a>      
+      <span class="i-third">
+        <a class="active-1" href="https://twitter.com/smylinwolf">
+          <i class="fa-brands fa-square-x-twitter fa-flip fa-2xl"></i>
+        </a>
+      </span>
+    </p>
+  </div>
+  <footer>
+      <small class="primary-footer">&copy; Smylinwolf</small>
+  </footer>
+{% endblock %}

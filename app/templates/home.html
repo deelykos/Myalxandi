@@ -18,7 +18,6 @@
     <script src="https://kit.fontawesome.com/f5e4a36370.js" crossorigin="anonymous"></script>
    </head>
 {% block body %}   
-<body>
   <nav>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
@@ -26,23 +25,43 @@
     </label>
     <label class="logo">Myalxandi</label>
     <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Features</a></li>
+      <li><a class="active-0"  href="{{ url_for('main.contact') }}">Contact</a></li>
       <li><a class="active"  href="{{ url_for('users.login') }}">Log in</a></li>
       <li><a class="active" href="{{ url_for('users.signup') }}">Sign up</a></li>
     </ul>
   </nav>
-  <div class="Bgimage">
-    <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Background Image">
-  </div>
   <div class="center">
     <h2>WHERE TASKS MEET</h2>
     <h2>TRIUMPH</h2>
     <p>Be focused,do hard things but remember your works,
       keep it organized and safe
     </p>
-  </div> 
-</body>
+  </div>
+  <div class="section1">
+    <h1>Student Success Starts Here</h1>
+    <p>Create and conquer your tasks with ease. Stay organized, track your progress, and
+       make the most out of your student journey.
+    </p>
+  </div>
+  <div class="section2">
+    
+    <h1>Empower Your Productivity</h1>
+<p>Let's make task management a breeze! Stay on top of your goals by effortlessly
+   tracking your progress, distinguishing between completed triumphs and upcoming challenges.
+</p>
+  </div>
+  <div class="section3">
+    <h1>Discover Your Digital Persona</h1>
+    <p>Elevate Your Online Presence with Personalized User Profiles</p>
+  </div>
+  <div class="section4">
+    <h1>Elevate Your Study Game</h1>
+    <p>Let's help you keep track of your academic journey. Effortlessly manage
+       your tasks, marking achievements and conquering challenges.
+    </p>
+  </div>
+  <footer class="primary-footer">
+      <small class="primary-footer">&copy; Smylinwolf</small>
+  </footer>
 {% endblock %}
 </html>

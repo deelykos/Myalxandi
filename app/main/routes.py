@@ -19,3 +19,19 @@ def home():
     """
 
     return render_template('home.html')
+
+@main.route('/about')
+def contact():
+    """
+    Render the about page.
+
+    Returns:
+        str: The HTML content of the rendered 'about.html' template.
+
+    Example:
+        The function is a Flask route handler for the '/about' routes.
+        It renders the 'about.html' template and returns the HTML content as a string:
+
+    """
+
+    return render_template('contact.html')
