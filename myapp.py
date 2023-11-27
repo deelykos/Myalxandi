@@ -9,4 +9,4 @@ if __name__ == '__main__':
     Example:
         The script creates a Flask application using the create_app function.
     """
-    app.run(debug=True, host='0.0.0.0')
+    app.run
