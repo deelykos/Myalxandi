@@ -8,7 +8,7 @@ from flask_login import UserMixin
 @login.user_loader
 def load_user(user_id):
     """
-    Load a user by user ID for Flask-Login.
+    Load a user by the user ID for Flask-Login.
 
     Args:
         user_id (int): The ID of the user.
