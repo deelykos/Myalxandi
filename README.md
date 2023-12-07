@@ -10,6 +10,9 @@ Welcome to Myalxandi, the pinnacle of task management solutions meticulously cra
 - [Technology Stack](#technology-stack)
 - [Getting Started](#getting-started)
 - [Features](#features)
+- [Future](#future)
+- [Author](#author)
+- [Acknowledgements](#acknowledgements)
 
 
 ## The Story
@@ -65,7 +68,7 @@ From the dashboard, a user will be able to add, edit and delete tasks.
 
   - **Text Editor**
 
-A user friendly text editor
+A user friendly text editor.
 
 ![add task](https://github.com/deelykos/Myalxandi/assets/101451046/344e1085-9dad-4ec3-8f14-1758c0bd7c7c)
 
@@ -85,3 +88,18 @@ In this section, users can add a profile picture, update username and email.
 
 
 
+## Future
+
+There are lots of features I would love to add(as earlier mention in [The Story](#the-story)). If you have any Ideas, I will really love it. Kindly reach out to me.
+
+
+## Author
+
+### **Ohazulume.C Fabian**
+[deelykos](https://github.com/deelykos)
+
+
+## Acknowledgements
+
+- The MOST HIGH
+- [Alx_Africa]https://www.alxafrica.com/
