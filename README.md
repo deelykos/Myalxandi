@@ -8,6 +8,8 @@ Welcome to Myalxandi, the pinnacle of task management solutions meticulously cra
 
 - [The Story](#the-story)
 - [Technology Stack](#technology-stack)
+- [Getting Started](#getting-started)
+- [Features](#features)
 
 
 ## The Story
@@ -26,15 +28,21 @@ The journey, marked by dedication and a relentless pursuit of excellence, result
 - Css
 - Javascript
 
-
 ### Backend:
+- Python 
 - Flask micro web framework
 
-
-### Database
-- SQLITE (local development stage)
-- MYSQL (deployment stage)(pending)
-
+### Database:
+- SQLAlchemy
+- SQLITE Relational Database (local development stage)
+- MYSQL Relational Database (deployment stage)(pending)
 
 ### DevOps:
 - pending....
+
+
+## Getting Started
+- pending
+
+
+## Features
