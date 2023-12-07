@@ -46,3 +46,8 @@ The journey, marked by dedication and a relentless pursuit of excellence, result
 
 
 ## Features
+
+### Signup
+Signing up is the first step. Afterwards, proceed to login.
+![Sign up page](https://github.com/deelykos/Myalxandi/assets/101451046/2b4806cb-b6a3-4923-b64d-a554a669b5ab)
+
