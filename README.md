@@ -102,4 +102,4 @@ There are lots of features I would love to add(as earlier mention in [The Story]
 ## Acknowledgements
 
 - The MOST HIGH
-- [Alx_Africa]https://www.alxafrica.com/
+- [Alx_Africa](https://www.alxafrica.com)
