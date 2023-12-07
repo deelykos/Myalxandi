@@ -63,7 +63,6 @@ From the dashboard, a user will be able to add, edit and delete tasks.
   ![Dashboard](https://github.com/deelykos/Myalxandi/assets/101451046/65b2b721-b210-4c6e-b150-3c717c72c88b)
 
 
-
   - **Text Editor**
 
 A user friendly text editor
@@ -73,14 +72,14 @@ A user friendly text editor
 
 - **Viewing Task**
 
-  View your tasks whenever!
+View your tasks whenever!
 
   ![task](https://github.com/deelykos/Myalxandi/assets/101451046/2a7d0985-680d-48bb-ada6-0a2392eb98fa)
 
 
-  - **Personalized Profile**
+- **Personalized Profile**
 
-  In this section, users can add a profile picture, update username and email.
+In this section, users can add a profile picture, update username and email.
 
   ![profile](https://github.com/deelykos/Myalxandi/assets/101451046/a2cd3044-230e-47b8-948e-196da7e41285)
 
