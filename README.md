@@ -7,7 +7,7 @@ Welcome to Myalxandi, the pinnacle of task management solutions meticulously cra
 ## Table of content
 
 - [The Story](#the-story)
-- 
+- [Technology Stack](#technology-stack)
 
 
 ## The Story
@@ -17,3 +17,24 @@ The inception of Myalxandi is a compelling narrative, born out of an ambitious u
 In the face of time constraints, I recalibrated my vision, prioritizing the essential aspects of a task management application. Myalxandi emerged as a testament to adaptability and resourcefulness, a refined solution that encapsulates the core functionalities within the given timeframe. Although the grander features of collaboration and shared experiences amongst users(like communities) were temporarily set aside, they remain integral to the envisioned expansion of Myalxandi in the future.
 
 The journey, marked by dedication and a relentless pursuit of excellence, resulted in the creation of an application that stands as a testament to the fusion of creativity and technical prowess. Myalxandi represents not just a project but a manifestation of my commitment to continuous improvement and the relentless pursuit of excellence in software engineering.
+
+
+## Technology Stack
+
+### Frontend:
+- Html
+- Css
+- Javascript
+
+
+### Backend:
+- Flask micro web framework
+
+
+### Database
+- SQLITE (local development stage)
+- MYSQL (deployment stage)(pending)
+
+
+### DevOps:
+- pending....
