@@ -12,7 +12,7 @@ Welcome to Myalxandi, the pinnacle of task management solutions meticulously cra
 
 ## The Story
 
-The inception of Myalxandi is a compelling narrative, born out of an ambitious undertaking during my foundation stage at ALX Software Engineering School. Initially envisioned as a comprehensive task management application with collaborative features, and shared experiences amongst users(like communities), the project faced the inevitable constraints of a limited time frame – a mere two weeks. Despite the challenges imposed by the ticking clock, I embraced the opportunity to channel my passion for both frontend and backend development into this solo venture.
+The inception of Myalxandi is a compelling narrative, born out of an ambitious undertaking during my final foundation sprint at ALX Software Engineering School. Initially envisioned as a comprehensive task management application with collaborative features, and shared experiences amongst users(like communities), the project faced the inevitable constraints of a limited time frame – a mere two weeks. Despite the challenges imposed by the ticking clock, I embraced the opportunity to channel my passion for both frontend and backend development into this solo venture.
 
 In the face of time constraints, I recalibrated my vision, prioritizing the essential aspects of a task management application. Myalxandi emerged as a testament to adaptability and resourcefulness, a refined solution that encapsulates the core functionalities within the given timeframe. Although the grander features of collaboration and shared experiences amongst users(like communities) were temporarily set aside, they remain integral to the envisioned expansion of Myalxandi in the future.
 
