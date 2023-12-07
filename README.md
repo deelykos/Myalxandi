@@ -59,7 +59,7 @@ Signing up is the first step. Afterwards, proceed to login.
 
 - **Dashboard**
   
-After logging in, you will be able to access the dashboard. The screenshot below, displays a dashboard with some task already added. A new user gets a "clean slate!".
+After logging in, users will be able to access the dashboard. The screenshot below, displays a dashboard with some task already added. A new user gets a "clean slate!".
 From the dashboard, a user will be able to add, edit and delete tasks.
 
   ![Dashboard](https://github.com/deelykos/Myalxandi/assets/101451046/65b2b721-b210-4c6e-b150-3c717c72c88b)
