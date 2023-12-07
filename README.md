@@ -89,7 +89,7 @@ In this section, users can add a profile picture, update username and email.
 
 ## Future
 
-There are lots of features I would love to add(as earlier mention in [The Story](#the-story)). If you have any Ideas, I will really love it. Kindly reach out to me.
+There are lots of features I would love to add(as mentioned in [The Story](#the-story)). If you have any ideas, I will really love it. Kindly reach out to me.
 
 
 ## Author
