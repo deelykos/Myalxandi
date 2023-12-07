@@ -52,3 +52,7 @@ Signing up is the first step. Afterwards, proceed to login.
 
 ![Sign up page](https://github.com/deelykos/Myalxandi/assets/101451046/2b4806cb-b6a3-4923-b64d-a554a669b5ab)
 
+- Dashboard
+  After logging in, you will be able to access the dashboard. The screenshot below, displays a dashboard with some task already added. A new user gets a "clean slate!"
+
+  ![Dashboard](https://github.com/deelykos/Myalxandi/assets/101451046/65b2b721-b210-4c6e-b150-3c717c72c88b)
