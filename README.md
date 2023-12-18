@@ -35,8 +35,8 @@ The journey, marked by dedication and a relentless pursuit of excellence, result
 - Flask micro web framework
 
 ### Database:
-- SQLAlchemy
-- SQLITE Relational Database (local development stage)
+- ORM (SQLAlchemy)
+- SQLITE3 Relational Database (local development stage)
 - MYSQL Relational Database (deployment stage)(pending)
 
 ### DevOps:
